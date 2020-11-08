@@ -131,7 +131,6 @@ const createActions = store => {
       } catch (e) {
         error = error | get(e, 'response.status');
       }
-
       // If an error occurs
       if (error) {
         z2mEnabled = false;
