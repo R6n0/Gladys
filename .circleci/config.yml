@@ -235,6 +235,8 @@ workflows:
           requires:
             - build-front
           filters:
+            tags:
+              only: /.*/
             branches:
               only: zigbee2mqtt-service
       - build-amd64:
