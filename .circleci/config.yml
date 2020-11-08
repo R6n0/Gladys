@@ -225,8 +225,8 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - test-server:
-      - test-front:
+      - test-server
+      - test-front
       - build-front:
           requires:
             - test-server
@@ -243,24 +243,32 @@ workflows:
           requires:
             - build-front
           filters:
+            tags:
+              only: /.*/
             branches:
               only: zigbee2mqtt-service
       - build-i386:
           requires:
             - build-front
           filters:
+            tags:
+              only: /.*/
             branches:
               only: zigbee2mqtt-service
       - build-arm64v8:
           requires:
             - build-front
           filters:
+            tags:
+              only: /.*/
             branches:
               only: zigbee2mqtt-service
       - build-arm32v7:
           requires:
             - build-front
           filters:
+            tags:
+              only: /.*/
             branches:
               only: zigbee2mqtt-service
       - docker_manifest:
@@ -271,5 +279,7 @@ workflows:
             - build-armhf
             - build-arm32v7
           filters:
+            tags:
+              only: /.*/
             branches:
               only: zigbee2mqtt-service
