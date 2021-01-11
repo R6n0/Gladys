@@ -27,7 +27,7 @@ mqtt:
   user: $1
   password: $2
 serial:
-  port: /dev/ttyACM0
+  port: $3Fix to use the real USB device (not default ttyACM0)
   # Optional: disable LED of the adapter if supported (default: false)
   disable_led: true
 frontend:
