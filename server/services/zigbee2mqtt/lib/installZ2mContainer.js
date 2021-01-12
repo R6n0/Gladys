@@ -2,7 +2,7 @@ const { promisify } = require('util');
 const { exec } = require('../../../utils/childProcess');
 const { CONFIGURATION } = require('./constants');
 const { EVENTS, WEBSOCKET_MESSAGE_TYPES } = require('../../../utils/constants');
-let containerDescriptor = require('../docker/zigbee2mqtt-container.json');
+const containerDescriptor = require('../docker/zigbee2mqtt-container.json');
 const logger = require('../../../utils/logger');
 
 const sleep = promisify(setTimeout);
